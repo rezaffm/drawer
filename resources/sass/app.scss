@@ -1,0 +1,150 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Import Vue 2 Perfect Scrollbar
+@import '~vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css';
+
+.ps {
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 100vh;
+    max-width: 100%;
+    position: relative;
+
+    .drawer--triggered {
+        left: -256px;
+    }
+
+    .shift--content {
+        padding-left: 10px;
+    }
+}
+
+.is--mobile {
+    .drawer--triggered {
+            left: 0px;
+        }
+
+    .overlay--active {
+        cursor: pointer;
+        z-index: 6;
+        opacity: 0.46;
+        background-color: #212121;
+        border-color: #212121;
+    }
+}
+
+
+.navigation-drawer {
+    position: fixed;
+    background-color: $primary;
+    width: 256px;
+    height: 100vh;
+    z-index: 7;
+    left: -256px;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    will-change: transform;
+    transition-property: left;
+
+    .active {
+        color: $primary !important;
+        background: #fff;
+        border-right: 1px solid $secondary;
+    }
+
+    ul li a {
+        padding: 1rem 1rem;
+    }
+
+    ul li a:hover {
+        color: $primary !important;
+        background: #fff;
+        border-right: 1px solid $secondary;
+    }
+}
+
+.sidebar--header {
+    padding: 1rem;
+}
+
+.tool-bar {
+    padding-left: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #dee2e6 !important;
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    height: 56px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    will-change: transform;
+    transition-property: padding;
+}
+
+.content {
+    padding: 66px 0px 36px 10px;
+    background: #fff;
+    display: flex;
+    flex: 1 0 auto;
+    max-width: 100%;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    will-change: transform;
+    transition-property: padding;
+}
+
+.overlay {
+    align-items: center;
+    border-radius: inherit;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .3s cubic-bezier(.25,.8,.5,1),
+    z-index 1ms;
+    pointer-events: auto;
+    color: #fff;
+}
+
+.overlay--active {
+    cursor: pointer;
+    z-index: 0;
+}
+
+@media only screen and (min-width: 1260px) {
+    .navigation-drawer {
+        left: 0px;
+    }
+    .content {
+        padding-left: 266px;
+    }
+    .tool-bar {
+        padding-left: 266px;
+    }
+}
+
+.ul--clean {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
