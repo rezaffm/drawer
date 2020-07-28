@@ -41,46 +41,48 @@
                     'drawer--triggered': toggle,
                 }"
             >
-                <perfect-scrollbar>
-                    <div class="sidebar--header">
-                        <h3><a class="text-light text-decoration-none" href="#">Dashboard</a></h3>
+                    <perfect-scrollbar>
+                    <div>
+                        <div class="sidebar--header">
+                            <h3><a class="text-light text-decoration-none" href="#">Dashboard</a></h3>
+                        </div>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link text-light " href="#">Link 1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light " href="#">Link 2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light " href="#">Link 3</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light " href="#">Link 4</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light " href="#">Link 5</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light " href="#">Link 6</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light " href="#">Link 7</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light " href="#">Link 8</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light " href="#">Link 9</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light " href="#">Link 10</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light " href="#">Link 11</a>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link text-light " href="#">Link 1</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light " href="#">Link 2</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light " href="#">Link 3</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light " href="#">Link 4</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light " href="#">Link 5</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light " href="#">Link 6</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light " href="#">Link 7</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light " href="#">Link 8</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light " href="#">Link 9</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light " href="#">Link 10</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light " href="#">Link 11</a>
-                        </li>
-                    </ul>
-                </perfect-scrollbar>
+                <perfect-scrollbar>
             </nav><!-- navigation-drawer-->
 
             <nav
@@ -107,7 +109,22 @@
               :class="{ 'shift--content': toggle && !mobile }"
             >
               <div class="container-fluid">
-                toggle @{{ toggle }} and mobile @{{ mobile }}
+               {{-- toggle @{{ toggle }} and mobile @{{ mobile }} --}}
+                @if ($errors->any())
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                @if (session('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
+               @yield('content')
               </div>
             </main><!--.main-->
         </div><!--.wrapper-->

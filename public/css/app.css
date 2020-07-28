@@ -11116,7 +11116,7 @@ a.text-dark:focus {
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
-  transition-property: padding;
+  transition-property: padding-left;
 }
 
 .content {
@@ -11128,7 +11128,7 @@ a.text-dark:focus {
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
-  transition-property: padding;
+  transition-property: padding-left;
 }
 
 .overlay {

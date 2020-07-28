@@ -94,7 +94,7 @@
     transition-duration: .2s;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     will-change: transform;
-    transition-property: padding;
+    transition-property: padding-left;
 }
 
 .content {
@@ -106,7 +106,7 @@
     transition-duration: .2s;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     will-change: transform;
-    transition-property: padding;
+    transition-property: padding-left;
 }
 
 .overlay {
